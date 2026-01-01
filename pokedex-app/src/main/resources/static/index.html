@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex Interface</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pokedex</h1>
+            <p>Database Search</p>
+        </header>
+
+        <div class="search-wrapper">
+            <div class="input-group">
+                <input type="text" id="query" placeholder="Enter Pokemon name..." autocomplete="off">
+                <button onclick="executeSearch()">Search</button>
+            </div>
+            <ul id="suggestions" class="suggestion-list hide"></ul>
+        </div>
+
+        <div id="loader" class="hide">
+            <div class="spinner"></div>
+        </div>
+
+        <div id="error" class="hide"></div>
+
+        <div id="result" class="card hide">
+            <div class="card-header">
+                <span id="p-id" class="id-badge">#000</span>
+                <h2 id="p-name">Name</h2>
+            </div>
+            
+            <div class="sprite-container">
+                <img id="p-img" src="" alt="Sprite">
+            </div>
+
+            <div class="tags" id="p-types"></div>
+            
+            <div class="stats-wrapper">
+                <h3>Base Stats</h3>
+                <div class="stats" id="p-stats"></div>
+            </div>
+            
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <label>Height</label>
+                    <div id="p-height">0.0 m</div>
+                </div>
+                <div class="meta-item">
+                    <label>Weight</label>
+                    <div id="p-weight">0.0 kg</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
